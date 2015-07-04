@@ -1,7 +1,7 @@
 FROM jadoos/php-app-base
 MAINTAINER "Lukas Rosenstock" <lr@lukasrosenstock.net>
 
-# Install GIT and composer
+# Install GIT
 RUN yum install -y git
 
 # Install phpADNSite

@@ -34,7 +34,7 @@ echo "<?php return array(" \
   "			'uri' => 'https://api.app.net/' " \
   "		) " \
   "	), " \
-  "	'debug' => true " \
+  "	'debug' => false " \
   "); " > /var/www/app/web/config.php
 
 # Launch starter script
