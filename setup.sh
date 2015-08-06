@@ -26,7 +26,8 @@ echo "<?php return array(" \
   "		'PhpADNSite\Plugins\ReplyAndDirectedPostHider', " \
   "		'PhpADNSite\Plugins\LongPostsPlugin', " \
   "		'PhpADNSite\Plugins\OEmbedProcessor', " \
-  "		'PhpADNSite\Plugins\WebmentionPlugin' " \
+  "		'PhpADNSite\Plugins\WebmentionPlugin', " \
+  "		'PhpADNSite\Plugins\ReactionPlugin' " \
   "	), " \
   "	'backend' => array( " \
   "		'class' => 'PhpADNSite\Core\GuzzleAPIClient', " \
