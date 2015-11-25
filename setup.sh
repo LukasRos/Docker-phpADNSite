@@ -19,16 +19,21 @@ echo "<?php return array(" \
 	"	  'theme_config' => array( " \
   "		 'name' => '${THEME=bootstrap-default}', " \
   "		 'variables' => array() " \
-  "		) " \
+  "		), " \
+	"		'links' => array(), " \
   "	 ) " \
   "	), " \
   "	'plugins' => array( " \
   "		'PhpADNSite\Plugins\ReplyAndDirectedPostHider', " \
-  "		'PhpADNSite\Plugins\LongPostsPlugin', " \
+  "		'PhpADNSite\Plugins\LongpostsPlugin', " \
   "		'PhpADNSite\Plugins\OEmbedProcessor', " \
   "		'PhpADNSite\Plugins\WebmentionPlugin', " \
   "		'PhpADNSite\Plugins\ReactionPlugin' " \
   "	), " \
+  " 'views' => array( " \
+	"	  'PhpADNSite\FilteredViews\TopPostsView', " \
+	"	  'PhpADNSite\FilteredViews\LongpostsView' " \
+	"), " \
   "	'backend' => array( " \
   "		'class' => 'PhpADNSite\Core\GuzzleAPIClient', " \
   "		'config' => array( " \
