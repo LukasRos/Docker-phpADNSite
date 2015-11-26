@@ -7,9 +7,16 @@ fi
 ADN_USERNAME=$1
 ADN_ACCESS_TOKEN=$2
 
-# Write configuration file
-echo "Writing configuration for $ADN_USERNAME ..."
-echo "<?php return array(" \
+if [ -n "$STORED_CONFIG_FILENAME" ]; then
+  # Download configuration file from storage
+  php /var/www/app/web/download-configuration.php $ADN_USERNAME $ADN_ACCESS_TOKEN $STORED_CONFIG_FILENAME
+  if [ "$?" != "0" ]; then
+    exit 1
+  fi
+else
+  # Write custom configuration file
+  echo "Writing configuration for $ADN_USERNAME ..."
+  echo "<?php return array(" \
   " 'domains' => array( " \
   "   '*' => array( " \
   "		 'backend_config' => array( " \
@@ -42,6 +49,7 @@ echo "<?php return array(" \
   "	), " \
   "	'debug' => false " \
   "); " > /var/www/app/web/config.php
+fi
 
 # Launch starter script
 sh /tmp/start.sh
